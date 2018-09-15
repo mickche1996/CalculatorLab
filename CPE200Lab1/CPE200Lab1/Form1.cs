@@ -15,7 +15,8 @@ namespace CPE200Lab1
     {
         bool DotExist;
         bool SignExist;
-        String Value1;
+        string Value1;
+        int Operation;
         public Form1()
         {
             InitializeComponent();
@@ -28,6 +29,13 @@ namespace CPE200Lab1
                 lblDisplay.Text = "";
             }
             lblDisplay.Text = lblDisplay.Text + x;
+        }
+        
+        private void MathOperation(int x)
+        {
+            Value1 = lblDisplay.Text;
+            lblDisplay.Text = "";
+            Operation = x;
         }
         
 
@@ -129,9 +137,22 @@ namespace CPE200Lab1
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
-            Value1 = lblDisplay.Text;
-            lblDisplay.Text="";
+            MathOperation(1);         
+        }
 
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+            MathOperation(2);
+        }
+
+        private void btnMultiply_Click(object sender, EventArgs e)
+        {
+            MathOperation(3);
+        }
+
+        private void btnDivide_Click(object sender, EventArgs e)
+        {
+            MathOperation(4);
         }
     }
 }
