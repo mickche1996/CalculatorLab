@@ -16,6 +16,11 @@ namespace CPE200Lab1
         bool DotExist;
         bool SignExist;
         string Value1;
+        string Value2;
+        string solution;
+        double x;
+        double y;
+        double z;
         int Operation;
         public Form1()
         {
@@ -154,5 +159,65 @@ namespace CPE200Lab1
         {
             MathOperation(4);
         }
+
+        private void btnEqual_Click(object sender, EventArgs e)
+        {
+            Value2 = lblDisplay.Text;
+            x = Convert.ToDouble(Value1);
+            y = Convert.ToDouble(Value2);
+            if(Operation == 1)
+            {
+                z = x + y;
+            }
+            if (Operation == 2)
+            {
+                z = x - y;
+            }
+            if (Operation == 3)
+            {
+                z = x * y;
+            }
+            if (Operation == 4)
+            {
+                z = x / y;
+            }
+            solution = Convert.ToString(z);
+            lblDisplay.Text = solution;
+
+        }
+
+        private void btnPercent_Click(object sender, EventArgs e)
+        {
+            Value2 = lblDisplay.Text;
+            x = Convert.ToDouble(Value1);
+            y = Convert.ToDouble(Value2);
+            y = (x / 100) * y;
+            if(Operation == 1)
+            {
+                z = x + y;
+            }
+            if (Operation == 2)
+            {
+                z = x - y;
+            }
+            if (Operation == 3)
+            {
+                z = x * y;
+            }
+            if (Operation == 4)
+            {
+                z = x / y;
+            }
+            solution = Convert.ToString(z);
+            if (solution.Length > 8)
+            {
+                lblDisplay.Text = "ERROR";
+            }
+            else { lblDisplay.Text = solution; }
+            
+          
+            }
+
+        }
     }
-}
+
