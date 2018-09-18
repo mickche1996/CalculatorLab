@@ -17,7 +17,7 @@ namespace CPE200Lab1
         bool SignExist;
         string Value1;
         string Value2;
-        string solution;
+        string solution = "N";
         double x;
         double y;
         double z;
@@ -182,7 +182,16 @@ namespace CPE200Lab1
                 z = x / y;
             }
             solution = Convert.ToString(z);
-            lblDisplay.Text = solution;
+            int i=solution.Length;
+            if(i < 8)
+            {
+                lblDisplay.Text = solution;
+            }
+            else
+            {
+
+                lblDisplay.Text = "ERROR";
+            }
 
         }
 
@@ -209,11 +218,14 @@ namespace CPE200Lab1
                 z = x / y;
             }
             solution = Convert.ToString(z);
-            if (solution.Length > 8)
+            if (solution.Length>8)
             {
                 lblDisplay.Text = "ERROR";
             }
-            else { lblDisplay.Text = solution; }
+            else {
+                
+                lblDisplay.Text = solution;
+                 }
             
           
             }
